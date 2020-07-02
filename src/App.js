@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { ThemeContext } from './ThemeContext'
+import Toolbar from './Toolbar'
 
 function App() {
+
+  const themes = {
+    light: {
+      foreground: '#000',
+      background: '#fff'
+    },
+    dark: {
+      foreground: '#fff',
+      background: '#000'
+    }
+  }
+
+  const [ darkTheme, setDarkTheme ] = useState(true)
+
+  const toggleTheme = () => {
+    setDarkTheme(!darkTheme)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={{color: darkTheme ? themes.light : themes.dark, themeColor: darkTheme,  toggleTheme: toggleTheme}}>
+        <div className="App" style={{background: darkTheme ? themes.light.foreground : themes.dark.foreground}}>
+          <Toolbar/>
+      </div>
+    </ThemeContext.Provider>
+
   );
 }
 
