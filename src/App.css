@@ -1,15 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100vw;
   transition: ease .5s;
+  position: relative;
+  overflow: hidden;
 }
 
 .myButton {
-  width: 200px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 250px;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -18,11 +24,12 @@
   font-weight: 600;
   text-transform: uppercase;
   transition: ease .5s;
-  border: 1px solid black;
+  border: 1px solid #2EB5E5;
   border-radius: 5px;
+  z-index: 3;
 }
 .myButton:hover{
-  transform: scale(1.1)
+  transform: scale(1.05) ;
 }
 .myButton:focus{
   outline: none;
@@ -32,3 +39,222 @@ p{
   font-size: 20px;
   font-weight: 600;
 }
+
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+  from {background-position: 0;}
+  to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+width:100%;
+height:100%;
+display:block;
+}
+
+.stars {
+background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+z-index:0;
+}
+
+.twinkling{
+background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+z-index:1;
+
+-moz-animation:move-twink-back 200s linear infinite;
+-ms-animation:move-twink-back 200s linear infinite;
+-o-animation:move-twink-back 200s linear infinite;
+-webkit-animation:move-twink-back 200s linear infinite;
+animation:move-twink-back 200s linear infinite;
+}
+
+.sun { 
+  position: absolute;
+  height: 100%;
+  width: 100%;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin: auto;  
+	width:70px;
+	height:70px;
+	border-radius:50%;	
+	background:white;
+	opacity:0.9;			
+	box-shadow: 0px 0px 40px 15px white;  
+}
+
+.ray_box {
+  position: absolute;
+  margin: auto;
+	top:0px;
+	left:0;
+	right:0;
+	bottom:0;	
+  width:70px;  
+  -webkit-animation: ray_anim 120s linear infinite;
+  animation: ray_anim 120s linear infinite;
+  cursor: pointer;
+}
+.ray {  
+    background: -webkit-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+		background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
+    margin-left:10px;
+    border-radius:80% 80% 0 0;
+    position:absolute;
+    opacity:0.1;
+}
+
+.ray1 {    
+    height:170px;
+    width:30px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    top:-175px;
+    left: 15px;
+}
+.ray2 {
+    height:100px;
+    width:8px;
+    transform: rotate(220deg);
+    -webkit-transform: rotate(220deg);
+    top:-90px;
+    left: 75px;
+}
+.ray3 {
+    height:170px;
+    width:50px;
+    transform: rotate(250deg);
+    -webkit-transform: rotate(250deg);
+    top:-80px;
+    left: 100px;
+}
+.ray4 {
+    height:120px;
+    width:14px;
+    transform: rotate(305deg);
+    -webkit-transform: rotate(305deg);
+    top:30px;
+    left: 100px;
+}
+.ray5 {
+    height:140px;
+    width:30px;
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    top:60px;
+    left: 40px;
+}
+.ray6 {
+    height:90px;
+    width:50px;
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    top:60px;
+    left: -40px;
+}
+.ray7 {
+    height:180px;
+    width:10px;
+    transform: rotate(70deg);
+    -webkit-transform: rotate(70deg);
+    top:-35px;
+    left: -40px;
+}
+.ray8 {
+    height:120px;
+    width:30px;
+    transform: rotate(100deg);
+    -webkit-transform: rotate(100deg);
+    top:-45px;
+    left:-90px;
+}
+.ray9 {
+    height:80px;
+    width:10px;
+    transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+    top:-65px;
+    left:-60px;
+}
+.ray10 {
+    height:190px;
+    width:23px;
+    transform: rotate(150deg);
+    -webkit-transform: rotate(150deg);
+    top:-185px;
+    left: -60px;
+}
+
+@keyframes ray_anim { 
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+@-webkit-keyframes ray_anim { 
+		0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+.nightsky{
+  width:100%;
+  height:100%;
+  background:#000;
+  position: relative;
+}
+.nightsky .moon {
+  display:block;
+  height:200px;
+  width:200px;
+  border-radius:100%;
+  background :#ddd;
+  margin:auto;
+  box-shadow:0 0 50px gold,0 0 150px gold, inset 0 20px 20px 40px whitesmoke, inset 30px 0 35px 50px ivory;
+  transition:1s;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-100px;
+  margin-top:-100px;
+  z-index: 5;
+  cursor: pointer;
+}
+.nightsky .moon:hover {
+  box-shadow:0 0 50px tomato,0 0 30px orange, inset 0 10px 10px 20px #ddd, inset 30px 0 35px 50px #ccc;
+    background:#aaa;
+    transition:1s;
+  }

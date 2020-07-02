@@ -1,9 +1,9 @@
 import React from 'react'
-import ThemedButton from './ThemedButton'
+import ToggleButton from './ToggleButton'
 
 const Toolbar = () => (
     <div>
-        <ThemedButton />
+        <ToggleButton />
     </div>
 )
 
