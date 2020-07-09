@@ -24,12 +24,12 @@
   font-weight: 600;
   text-transform: uppercase;
   transition: ease .5s;
-  border: 1px solid #2EB5E5;
+  border: 1px solid #2EB5E7;
   border-radius: 5px;
   z-index: 3;
 }
 .myButton:hover{
-  transform: scale(1.05) ;
+  transform: scale(1.05);
 }
 .myButton:focus{
   outline: none;
